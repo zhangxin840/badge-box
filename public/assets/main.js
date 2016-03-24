@@ -19741,7 +19741,7 @@
 
 
 	// module
-	exports.push([module.id, "body #test {\n    -webkit-transition: 0.5s;\n    -o-transition: 0.5s;\n    transition: 0.5s;\n    background-color: #555;\n}\n", ""]);
+	exports.push([module.id, "body #test {\n    -webkit-transition: 0.5s;\n    transition: 0.5s;\n    background-color: #555;\n}\n", ""]);
 
 	// exports
 

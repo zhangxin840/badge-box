@@ -1,13 +1,4 @@
-const AUTOPREFIXER_BROWSERS = [
-  'Android 2.3',
-  'Android >= 4',
-  'Chrome >= 35',
-  'Firefox >= 31',
-  'Explorer >= 9',
-  'iOS >= 7',
-  'Opera >= 12',
-  'Safari >= 7.1',
-];
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: './src/client.js',
@@ -35,10 +26,20 @@ module.exports = {
             ],
         }]
     },
-    postcss: function () {
+    postcss: function (webpack) {
         return [
+            require('postcss-import')({
+                addDependencyTo: webpack
+            }),
             require('precss')(),
-            require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS }),
+            require('autoprefixer')()
         ];
-    }
+    },
+    plugins: [
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3100,
+            proxy: 'http://localhost:3000/'
+        })
+    ]
 };
