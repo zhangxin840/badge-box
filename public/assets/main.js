@@ -19741,7 +19741,7 @@
 
 
 	// module
-	exports.push([module.id, "body #test {\n    -webkit-transition: 0.5s;\n    transition: 0.5s;\n    background-color: #555;\n}\n", ""]);
+	exports.push([module.id, "body {\n  padding: 50px;\n  font: 14px \"MF JiaHei (Noncommercial) Regular\", \"Lucida Grande\", Helvetica, Arial, sans-serif;\n}\na {\n  color: #00b7ff;\n}\nbody #test {\n  -webkit-transition: 0.5s;\n  transition: 0.5s;\n  background-color: #555;\n}\n", ""]);
 
 	// exports
 
