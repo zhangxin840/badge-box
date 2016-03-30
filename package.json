@@ -6,8 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "font2": "fontmin src/*.ttf public/assets/fonts -t '徽章盒子'",
-    "font": "font-spider views/*.ejs",
+    "build:font": "bash tools/buildFont.sh",
     "build": "webpack",
     "build:watch": "webpack --watch",
     "lint": "eslint src routes",
