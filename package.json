@@ -50,15 +50,17 @@
         "webpack": "^1.12.14"
     },
     "scripts": {
-        "clean": "find build | grep 'build/' | grep -v 'build/node_modules' | xargs rm -rf",
+        "clean": "find build | grep 'build/' | grep -v 'build/node_modules' | grep -v 'build/.avoscloud' | xargs rm -rf",
         "copy": "cp -R src/server/. package.json build",
         "build:font": "bash tools/buildFont.sh",
         "build:pack": "webpack --config tools/webpack.config.js",
         "build": "npm run clean && npm run copy && npm run build:font && npm run build:pack",
-        "watch:browser": "webpack --config tools/webpack.config.js --watch",
-        "watch:server": "",
         "lint": "eslint src routes",
         "lint:fix": "eslint src routes --fix",
-        "start:local": "cd build && npm install --production && node server.js"
+        "up": "npm run build && cd build && npm install --production && lean up",
+        "watch:browser": "webpack --config tools/webpack.config.js --watch",
+        "watch:server": "",
+        "deploy": "npm run build && cd build && lean deploy",
+        "publish": "npm run build && cd build && lean publish"
     }
 }
