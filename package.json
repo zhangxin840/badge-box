@@ -5,12 +5,15 @@
   "repository": "https://github.com/zhangxin840/badge-box.git",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "clean": "",
+    "copy": "cp -R server/. build",
     "build:font": "bash tools/buildFont.sh",
-    "build": "webpack",
-    "build:watch": "webpack --watch",
+    "build:pack": "webpack --config tools/webpack.config.js",
+    "watch:browser": "webpack --config tools/webpack.config.js --watch",
+    "watch:server": "",
     "lint": "eslint src routes",
-    "lint:fix": "eslint src routes --fix"
+    "lint:fix": "eslint src routes --fix",
+    "start:local": "cd build && npm install --production && node server.js"
   },
   "keywords": [
     "node",

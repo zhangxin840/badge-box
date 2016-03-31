@@ -2,9 +2,9 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: './src/client.js',
+    entry: './src/browser/client.js',
     output: {
-        path: './public/assets',
+        path: './build/public/assets',
         filename: 'main.js',
     },
     module: {

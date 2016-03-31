@@ -5,4 +5,4 @@ echo $files
 characters=`grep -E -o -h -r . $files | sort -u | tr '\n' '\0'`
 echo $characters
 
-fontmin src/*.ttf public/assets/fonts -t $characters
+fontmin src/browser/fonts/*.ttf build/public/assets/fonts -t $characters
