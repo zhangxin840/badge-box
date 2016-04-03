@@ -49,6 +49,7 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "style-loader": "^0.13.0",
+    "watchy": "^0.6.6",
     "webpack": "^1.12.14"
   },
   "scripts": {
@@ -62,7 +63,7 @@
     "lint:fix": "eslint src routes --fix",
     "up": "npm run build && cd build && npm install --production && lean up",
     "watch:browser": "webpack --config tools/webpack.config.js --watch",
-    "watch:server": "",
+    "watch:server": "watchy -w src/server -- npm run build:server",
     "deploy": "npm run build && cd build && lean deploy",
     "publish": "npm run build && cd build && lean publish"
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import s from './index.scss';
+import s from './team.scss';
 
 class Hello extends React.Component {
   render() {

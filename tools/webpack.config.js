@@ -3,15 +3,15 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CommonsChunkPlugin = new require("webpack/lib/optimize/CommonsChunkPlugin")
 
 module.exports = {
-    entry: './src/browser/client.js',
     entry: {
-        index: "./src/browser/home/index.js"
-        // team: "./src/browser/team/team.js",
-        // user: "./src/browser/user/user.js"
+        index: "./src/browser/home/index.js",
+        team: "./src/browser/team/team.js",
+        user: "./src/browser/user/user.js"
     },
     output: {
         path: './build/public/assets',
-        filename: 'main.js',
+        filename: '[name].bundle.js',
+        chunkFilename: '[id].chunk.js'
     },
     module: {
         loaders: [{

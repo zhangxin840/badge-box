@@ -1,0 +1,9 @@
+@import "../common/common.scss";
+
+body{
+    #test {
+        @include clearfix;
+        transition: 0.5s;
+        background-color: $gray;
+    }
+}
