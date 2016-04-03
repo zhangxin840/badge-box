@@ -20,17 +20,18 @@ module.exports = {
             }
         }, {
             test: /\.scss$/,
-            loaders: [
-                'style-loader',
-                'css-loader',
-                'postcss-loader?parser=postcss-scss'
-                // ExtractTextPlugin.extract('style-loader',
-                //     ['css-loader', 'postcss-loader?parser=postcss-scss'])
-            ]
+            // WARNNING: ExtractTextPlugin must be the single loader
+            loader: ExtractTextPlugin.extract('css!postcss-loader?parser=postcss-scss')
+            // loaders: [
+            //     'style-loader',
+            //     'css-loader',
+            //     'postcss-loader?parser=postcss-scss'
+            // ]
         }]
     },
     postcss: function (webpack) {
         return [
+            // WARNING: The order matters
             require('postcss-import')({
                 addDependencyTo: webpack
             }),
