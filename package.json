@@ -1,6 +1,6 @@
 {
   "name": "badge-box",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tool for managing badges.",
   "repository": "https://github.com/zhangxin840/badge-box.git",
   "main": "server.js",
