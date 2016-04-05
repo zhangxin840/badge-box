@@ -23,6 +23,7 @@
     "node": "4.x"
   },
   "devDependencies": {
+    "antd": "^0.12.13",
     "autoprefixer": "^6.3.4",
     "babel-core": "^6.7.2",
     "babel-eslint": "^6.0.0",
@@ -58,6 +59,7 @@
     "copy": "cp -R src/server/. package.json build",
     "build:font": "bash tools/buildFont.sh",
     "build:pack": "webpack --config tools/webpack.config.js",
+    "build:pack:release": "webpack --config tools/webpack.config.js --optimize-minimize",
     "build:server": "npm run copy",
     "build": "npm run clean && npm run copy && npm run build:font && npm run build:pack",
     "lint": "eslint src routes",
