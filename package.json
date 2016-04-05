@@ -40,6 +40,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "font-spider": "^0.3.8",
     "fontmin": "^0.9.2",
+    "normalize.css": "^4.0.0",
     "postcss": "^5.0.19",
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.2",
