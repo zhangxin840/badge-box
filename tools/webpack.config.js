@@ -5,8 +5,8 @@ var CommonsChunkPlugin = new require("webpack/lib/optimize/CommonsChunkPlugin")
 module.exports = {
     entry: {
         index: "./src/browser/home/index.js",
-        team: "./src/browser/team/team.js",
-        user: "./src/browser/user/user.js"
+        user: "./src/browser/user/user.js",
+        team: "./src/browser/team/team.js"
     },
     output: {
         path: './build/public/assets',
@@ -48,11 +48,11 @@ module.exports = {
         ];
     },
     plugins: [
-        new ExtractTextPlugin('styles.css'),
         new CommonsChunkPlugin({
-            filename: "commons.js",
-            name: "commons"
+            filename: "common.bundle.js",
+            name: "common"
         }),
+        new ExtractTextPlugin('[name].bundle.css'),
         new BrowserSyncPlugin({
             host: 'localhost',
             port: 3100,

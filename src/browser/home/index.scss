@@ -1,9 +1,9 @@
-@import "../common/common.scss";
+@import "../common/_utils.scss";
 
-body{
-    #test {
-        @include clearfix;
-        transition: 0.5s;
-        background-color: #322;
-    }
+h1{
+    background-color: #111;
+}
+
+img{
+    width: 100px;
 }

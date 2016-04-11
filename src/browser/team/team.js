@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import utils from '../common/utils';
 import s from './team.scss';
 
 class Hello extends React.Component {

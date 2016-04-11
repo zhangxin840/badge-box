@@ -7,7 +7,10 @@ body {
   padding: 50px;
   font: 14px "MF JiaHei (Noncommercial) Regular", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00b7ff;
+body{
+    #test {
+        @include clearfix;
+        transition: 0.5s;
+        background-color: $gray;
+    }
 }
