@@ -25,7 +25,7 @@ module.exports = {
                 ]
             }
         }, {
-            test: /\.scss$/,
+            test: /\.s?css$/,
             // WARNNING: ExtractTextPlugin must be the single loader
             loader: ExtractTextPlugin.extract(
                     'css!postcss-loader?parser=postcss-scss')
@@ -34,6 +34,12 @@ module.exports = {
                 //     'css-loader',
                 //     'postcss-loader?parser=postcss-scss'
                 // ]
+        }, {
+            test: /\.(png|jpg|gif)$/,
+            loader: "file-loader?name=images/[name]-[hash].[ext]"
+        }, {
+            test: /\.(woff(2)?|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            loader: "file-loader?name=fonts/[name]-[hash].[ext]"
         }]
     },
     postcss: function (webpack) {

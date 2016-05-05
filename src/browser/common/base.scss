@@ -1,12 +1,14 @@
+@import "normalize.css";
+@import "font-awesome.css";
+@import "antd/lib/index.css";
 @import "_config.scss";
 @import "_utils.scss";
-@import "normalize.css";
-@import "antd/lib/index.css";
 
 body {
   padding: 50px;
   font: 14px "MF JiaHei (Noncommercial) Regular", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
 body{
     #test {
         @include clearfix;
