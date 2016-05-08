@@ -9,38 +9,45 @@ module.exports = {
         team: "./src/browser/team/team.js"
     },
     output: {
-        path: './build/public/assets',
+        path: './build/public',
         filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js'
     },
     module: {
         loaders: [{
-            test: /.jsx?$/,
-            loader: 'babel-loader',
-            exclude: /node_modules/,
-            query: {
-                presets: [
-                    'react',
-                    'es2015'
-                ]
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: [
+                        'react',
+                        'es2015'
+                    ]
+                }
+            }, {
+                test: /\.s?css$/,
+                // WARNNING: ExtractTextPlugin must be the single loader
+                loader: ExtractTextPlugin.extract(
+                        'css!postcss-loader?parser=postcss-scss')
+                    // loaders: [
+                    //     'style-loader',
+                    //     'css-loader',
+                    //     'postcss-loader?parser=postcss-scss'
+                    // ]
+            }, {
+                test: /\.(png|jpg|gif)$/,
+                loader: "url-loader?limit=10000&name=images/[name]-[hash].[ext]"
+            },
+            // the url-loader uses DataUrls.
+            // the file-loader emits files.
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "url-loader?limit=10000&mimetype=application/font-woff&name=fonts/[name]-[hash].[ext]"
+            }, {
+                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "file-loader?name=fonts/[name]-[hash].[ext]"
             }
-        }, {
-            test: /\.s?css$/,
-            // WARNNING: ExtractTextPlugin must be the single loader
-            loader: ExtractTextPlugin.extract(
-                    'css!postcss-loader?parser=postcss-scss')
-                // loaders: [
-                //     'style-loader',
-                //     'css-loader',
-                //     'postcss-loader?parser=postcss-scss'
-                // ]
-        }, {
-            test: /\.(png|jpg|gif)$/,
-            loader: "file-loader?name=images/[name]-[hash].[ext]"
-        }, {
-            test: /\.(woff(2)?|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: "file-loader?name=fonts/[name]-[hash].[ext]"
-        }]
+        ]
     },
     postcss: function (webpack) {
         return [
